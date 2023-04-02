@@ -1,7 +1,7 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
-const ulGallery = document.querySelector(".gallery");
+const gallery = document.querySelector(".gallery");
 
 const addToGallery = galleryItems
   .map(
@@ -18,7 +18,7 @@ const addToGallery = galleryItems
   )
   .join("");
 
-ulGallery.insertAdjacentHTML("afterbegin", addToGallery);
+gallery.insertAdjacentHTML("afterbegin", addToGallery);
 
 const selectPhoto = (event) => {
   event.preventDefault();
@@ -32,11 +32,11 @@ const selectPhoto = (event) => {
   `);
   instance.show();
 
-  ulGallery.addEventListener("keydown", (event) => {
+  gallery.addEventListener("keydown", (event) => {
     if (event.code === "Escape") {
       instance.close();
     }
   });
 };
 
-ulGallery.addEventListener("click", selectPhoto);
+gallery.addEventListener("click", selectPhoto);
