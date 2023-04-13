@@ -38,7 +38,6 @@ const selectPhoto = (event) => {
       if (event.code === "Escape") {
         instance.close();
       }
-      console.log(event);
     },
     { once: true },
   );
