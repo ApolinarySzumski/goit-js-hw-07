@@ -32,11 +32,16 @@ const selectPhoto = (event) => {
   `);
   instance.show();
 
-  gallery.addEventListener("keydown", (event) => {
-    if (event.code === "Escape") {
-      instance.close();
-    }
-  });
+  gallery.addEventListener(
+    "keydown",
+    (event) => {
+      if (event.code === "Escape") {
+        instance.close();
+      }
+      console.log(event);
+    },
+    { once: true },
+  );
 };
 
 gallery.addEventListener("click", selectPhoto);
